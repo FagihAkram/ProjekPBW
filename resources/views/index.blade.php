@@ -42,16 +42,27 @@
                   <div class="togle_">
                      <div class="menu_main">
                         <ul>
-                           @guest
-                           <li><a href="{{ route('login') }}">Login</a></li>
-                           @endguest
-                           @auth
-                           <form method="POST" action="{{ route('logout') }}">
-                              @csrf
-                              <button type="submit" class="btn btn-link">Logout</button>
-                           </form>
-                           @endauth
-                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                        @guest
+                        <li><a href="{{ route('login') }}">Login</a></li>
+                        @else
+                        <li class="dropdown">
+                           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                              {{ Auth::user()->name }} <span class="caret"></span>
+                           </a>
+                           <ul class="dropdown-menu" role="menu">
+                              <li>
+                                 <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    Logout
+                                 </a>
+                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                    @csrf
+                                 </form>
+                              </li>
+                           </ul>
+                        </li>
+                        @endguest
                         </ul>
                      </div>
                   </div>
@@ -59,7 +70,6 @@
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <div class="overlay-content">
                         <a href="/">Home</a>
-                        <a href="{{ route('protect') }}">Protect</a>
                         <a href="{{ route('about') }}">About</a>
                         <a href="{{ route('doctors') }}">Doctors</a>
                         <a href="{{ route('news') }}">News</a>
@@ -87,7 +97,6 @@
                                  Jangan tunda lagi, kunjungi dokter atau fasilitas kesehatan terdekat untuk mencegah
                                  kondisi yang lebih serius.
                                  Kesehatan adalah investasi terbaik untuk masa depan Anda..</p>
-                              <div class="more_bt"><a href="#">Read More</a></div>
                            </div>
                         </div>
                         <div class="col-md-6">
@@ -104,7 +113,6 @@
                                  dini untuk menjaga tubuh tetap sehat dan produktif.
                                  Segera temukan layanan kesehatan terdekat dan jangan ragu untuk berkonsultasi dengan
                                  dokter.</p>
-                              <div class="more_bt"><a href="#">Read More</a></div>
                            </div>
                         </div>
                         <div class="col-md-6">
@@ -121,7 +129,6 @@
                                  kesehatan Anda tetap terjaga.
                                  Ingat, kesehatan adalah aset terbesar kita, jadi jangan ragu untuk mencari bantuan
                                  medis yang Anda perlukan sejak dini.</p>
-                              <div class="more_bt"><a href="#">Read More</a></div>
                            </div>
                         </div>
                         <div class="col-md-6">
@@ -157,9 +164,9 @@
          <div class="protect_section_2 layout_padding">
             <div class="row">
                <div class="col-md-6">
-                  <h1 class="hands_text"><a href="#">Cuci tangan <br>secara teratur</a></h1>
-                  <h1 class="hands_text_2"><a href="#">Menjaga jarak<br>ketika sakit </a></h1>
-                  <h1 class="hands_text"><a href="#">Hindari menyentuh mata,<br>hidung dan mulut</a></h1>
+                  <h1 class="hands_text">Cuci tangan <br>secara teratur</h1>
+                  <h1 class="hands_text_2">Menjaga jarak<br>ketika sakit </h1>
+                  <h1 class="hands_text">Hindari menyentuh mata,<br>hidung dan mulut</h1>
                </div>
                <div class="col-md-6">
                   <div class="image_2"><img src="images/img-2.png"></div>
@@ -182,7 +189,7 @@
                   parasit, atau reaksi inflamasi. Ini adalah gejala dari suatu kondisi atau infeksi, bukan suatu
                   penyakit. Oleh karena itu, penting untuk mengidentifikasi penyebabnya dan mencari perawatan medis yang
                   tepat jika mengalami demam.</p>
-               <div class="read_bt"><a href="#">Read More</a></div>
+               <div class="read_bt"><a href="about">Read More</a></div>
             </div>
          </div>
       </div>
@@ -207,7 +214,7 @@
                         risiko terpapar dan menyebarluaskan virus. Jika seseorang terinfeksi virus, maka sangat penting
                         untuk mencari perawatan medis yang tepat untuk membantu mengurangi gejala dan mempercepat
                         pemulihan.</p>
-                     <div class="readmore_bt"><a href="#">Read More</a></div>
+                     <div class="readmore_bt"><a href="doctors">Read More</a></div>
                   </div>
                </div>
             </div>
@@ -285,16 +292,50 @@
    <!-- news section end -->
    <!-- update section start -->
    <div class="update_section">
+      @if(session('success'))
+      <!-- Tampilkan pesan sukses jika ada -->
+      <div class="alert-n">
+         {{ session('success') }}
+      </div>
+      <script>
+         setTimeout(function() {
+               location.reload();
+         }, 1000); // Refresh halaman setelah 5 detik (5000 ms)
+      </script>
+      @endif
+
+      @auth
+      <!-- Tampilkan form komentar hanya jika pengguna telah login -->
       <div class="container">
-         <h1 class="update_taital">Get Every Update.... </h1>
-         <form action="/action_page.php">
-            <div class="form-group">
-               <textarea class="update_mail" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-            </div>
-            <div class="subscribe_bt"><a href="#">Send</a></div>
+         <h1 class="update_taital">Get Every Update....</h1>
+         <form action="{{ route('comments.store') }}" method="POST">
+               @csrf
+               <div class="form-group">
+                  <textarea class="update_mail" placeholder="Massage" rows="5" id="comment" name="message"></textarea>
+               </div>
+               <div class="subscribe_bt"><button type="submit">Send</button></div>
          </form>
       </div>
+      @endauth
+
+      @guest
+      <!-- Tampilkan pesan atau tindakan lain untuk pengguna yang belum login -->
+      <p style="text-align: center;">Silakan login terlebih dahulu untuk mengirim komentar.</p>
+      @endguest
+
+      <style>
+         .alert-n {
+               padding: 20px;
+               background-color: #ff5959;
+               color: white;
+               font-size: 20px;
+               text-align: center;
+               border-radius: 10px;
+               font-weight: bold;
+         }
+      </style>
    </div>
+
    <!-- update section end -->
    <!-- footer section start -->
    <div class="footer_section layout_padding">
@@ -305,11 +346,10 @@
                   <h2 class="useful_text">Resources</h2>
                   <div class="footer_menu">
                      <ul>
-                        <li><a href="#">What we do</a></li>
-                        <li><a href="#">Media</a></li>
-                        <li><a href="#">Travel Advice</a></li>
-                        <li><a href="#">Protection</a></li>
-                        <li><a href="#">Care</a></li>
+                        <li>What we do</li>
+                        <li>Media</li>
+                        <li>Travel Advice</li>
+                        <li>Care</li>
                      </ul>
                   </div>
                </div>
@@ -325,16 +365,16 @@
                   <div class="location_text">
                      <ul>
                         <li>
-                           <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                              <span class="padding_15">Location</span></a>
+                           <i class="fa fa-map-marker" aria-hidden="true"></i>
+                              <span class="padding_15">Location</span>
                         </li>
                         <li>
-                           <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>
-                              <span class="padding_15">Call +62 87654321</span></a>
+                           <i class="fa fa-phone" aria-hidden="true"></i>
+                              <span class="padding_15">Call +62 87654321</span>
                         </li>
                         <li>
-                           <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>
-                              <span class="padding_15">ahai@gmail.com</span></a>
+                           <i class="fa fa-envelope" aria-hidden="true"></i>
+                              <span class="padding_15">healthvirus@gmail.com</span>
                         </li>
                      </ul>
                   </div>

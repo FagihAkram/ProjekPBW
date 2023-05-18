@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AntrianController;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -62,6 +63,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/antrian/{id}', [AntrianController::class, 'show'])->name('antrian.show');
 
     Route::delete('/antrian/{id}', [AntrianController::class, 'destroy'])->name('antrian.destroy');
+    Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 });
 
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';
