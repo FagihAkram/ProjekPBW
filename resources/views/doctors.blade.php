@@ -53,7 +53,6 @@
                               <button type="submit" class="btn btn-link">Logout</button>
                            </form>
                            @endauth
-                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                         </ul>
                      </div>
                   </div>
@@ -61,7 +60,6 @@
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <div class="overlay-content">
                         <a href="/">Home</a>
-                        <a href="{{ route('protect') }}">Protect</a>
                         <a href="{{ route('about') }}">About</a>
                         <a href="{{ route('doctors') }}">Doctors</a>
                         <a href="{{ route('news') }}">News</a>
@@ -125,11 +123,10 @@
                   <h2 class="useful_text">Resources</h2>
                   <div class="footer_menu">
                      <ul>
-                        <li><a href="#">What we do</a></li>
-                        <li><a href="#">Media</a></li>
-                        <li><a href="#">Travel Advice</a></li>
-                        <li><a href="#">Protection</a></li>
-                        <li><a href="#">Care</a></li>
+                        <li>What we do</li>
+                        <li>Media</li>
+                        <li>Travel Advice</li>
+                        <li>Care</li>
                      </ul>
                   </div>
                </div>
@@ -145,16 +142,16 @@
                   <div class="location_text">
                      <ul>
                         <li>
-                           <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                              <span class="padding_15">Location</span></a>
+                           <i class="fa fa-map-marker" aria-hidden="true"></i>
+                              <span class="padding_15">Location</span>
                         </li>
                         <li>
-                           <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>
-                              <span class="padding_15">Call +62 87654321</span></a>
+                           <i class="fa fa-phone" aria-hidden="true"></i>
+                              <span class="padding_15">Call +62 87654321</span>
                         </li>
                         <li>
-                           <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>
-                              <span class="padding_15">ahai@gmail.com</span></a>
+                           <i class="fa fa-envelope" aria-hidden="true"></i>
+                              <span class="padding_15">healthvirus@gmail.com</span>
                         </li>
                      </ul>
                   </div>
