@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AntrianController;
 use App\Http\Controllers\CommentController;
 
 /*
@@ -43,9 +44,26 @@ Route::middleware('auth')->group(function () {
     Route::get('/news', function () {
         return view('news');
     })->name('news');
+
+    // Route::get('/ambilantrian', function () {
+    //     return view('ambilantrian');
+    // })->name('ambilantrian');
+
+
+    Route::get('/antrian', [AntrianController::class, 'index'])->name('antrian.index');
+
+    Route::get('/antrian/create', [AntrianController::class, 'create'])->name('antrian.create');
+    Route::post('/antrian', [AntrianController::class, 'store'])->name('antrian.store');
+
+    Route::get('/antrian/{id}/edit', [AntrianController::class, 'edit'])->name('antrian.edit');
+    Route::put('/antrian/{id}', [AntrianController::class, 'update'])->name('antrian.update');
+
+
+    /** Route untuk menampilkan deskripsi antrian berdasarkan id */
+    Route::get('/antrian/{id}', [AntrianController::class, 'show'])->name('antrian.show');
+
+    Route::delete('/antrian/{id}', [AntrianController::class, 'destroy'])->name('antrian.destroy');
+    Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 });
-
-
-Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
 require __DIR__.'/auth.php';

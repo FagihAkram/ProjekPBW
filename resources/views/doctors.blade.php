@@ -106,7 +106,7 @@
                         risiko terpapar dan menyebarluaskan virus. Jika seseorang terinfeksi virus, maka sangat penting
                         untuk mencari perawatan medis yang tepat untuk membantu mengurangi gejala dan mempercepat
                         pemulihan.</p>
-                     <div class="readmore_bt"><a href="#">Read More</a></div>
+                     <div class="readmore_bt"><a href="{{ route('antrian.index') }}">Ambil Nomor Antrian</a></div>
                   </div>
                </div>
             </div>
