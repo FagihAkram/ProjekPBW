@@ -42,8 +42,7 @@
                   <div class="togle_">
                      <div class="menu_main">
                         <ul>
-                           <li><a href="#">Login</a></li>
-                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                           <li><a href="login">Login</a></li>
                         </ul>
                      </div>
                   </div>
@@ -199,7 +198,7 @@
                         risiko terpapar dan menyebarluaskan virus. Jika seseorang terinfeksi virus, maka sangat penting
                         untuk mencari perawatan medis yang tepat untuk membantu mengurangi gejala dan mempercepat
                         pemulihan.</p>
-                     <div class="readmore_bt"><a href="#">Read More</a></div>
+                     <div class="readmore_bt"><a href="doctors">Read More</a></div>
                   </div>
                </div>
             </div>
@@ -277,16 +276,50 @@
    <!-- news section end -->
    <!-- update section start -->
    <div class="update_section">
+      @if(session('success'))
+      <!-- Tampilkan pesan sukses jika ada -->
+      <div class="alert-n">
+         {{ session('success') }}
+      </div>
+      <script>
+         setTimeout(function() {
+               location.reload();
+         }, 1000); // Refresh halaman setelah 5 detik (5000 ms)
+      </script>
+      @endif
+
+      @auth
+      <!-- Tampilkan form komentar hanya jika pengguna telah login -->
       <div class="container">
-         <h1 class="update_taital">Get Every Update.... </h1>
-         <form action="/action_page.php">
-            <div class="form-group">
-               <textarea class="update_mail" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-            </div>
-            <div class="subscribe_bt"><a href="#">Send</a></div>
+         <h1 class="update_taital">Get Every Update....</h1>
+         <form action="{{ route('comments.store') }}" method="POST">
+               @csrf
+               <div class="form-group">
+                  <textarea class="update_mail" placeholder="Massage" rows="5" id="comment" name="message"></textarea>
+               </div>
+               <div class="subscribe_bt"><button type="submit">Send</button></div>
          </form>
       </div>
+      @endauth
+
+      @guest
+      <!-- Tampilkan pesan atau tindakan lain untuk pengguna yang belum login -->
+      <p>Silakan login terlebih dahulu untuk mengirim komentar.</p>
+      @endguest
+
+      <style>
+         .alert-n {
+               padding: 20px;
+               background-color: #ff5959;
+               color: white;
+               font-size: 20px;
+               text-align: center;
+               border-radius: 10px;
+               font-weight: bold;
+         }
+      </style>
    </div>
+
    <!-- update section end -->
    <!-- footer section start -->
    <div class="footer_section layout_padding">

@@ -44,15 +44,14 @@
                   <div class="togle_">
                      <div class="menu_main">
                         <ul>
-                           <li><a href="#">Login</a></li>
-                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+                           <li><a href="login">Login</a></li>
                         </ul>
                      </div>
                   </div>
                   <div id="myNav" class="overlay">
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <div class="overlay-content">
-                        <a href="index">Home</a>
+                        <a href="/">Home</a>
                         <a href="protect">Protect</a>
                         <a href="about">About</a>
                         <a href="doctors">Doctors</a>
@@ -72,7 +71,7 @@
             <h2 class="about_tag">Protect Virus</h2>
             <div class="about_menu">
                <ul>
-                  <li><a href="index">Home</a></li>
+                  <li><a href="/">Home</a></li>
                   <li>Protect</li>
                </ul>
             </div>

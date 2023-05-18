@@ -717,7 +717,7 @@ menu_text {
     width: 100%;
     float: left;
     background-image: url(../images/news-bg.png);
-    height: auto;
+    height: 100%;
     background-size: 100%;
     padding-bottom: 190px;
     background-repeat: no-repeat;
@@ -882,16 +882,15 @@ textarea#comment::placeholder {
     color: #969695;
 }
 
-
 .subscribe_bt {
     width: 200px;
     margin: 0 auto;
     padding-top: 30px;
+    text-align: center; /* added to center the button */
 }
-
-.subscribe_bt a {
+    
+.subscribe_bt button[type="submit"] {
     width: 100%;
-    float: left;
     color: #ffffff;
     font-size: 16px;
     padding: 10px 0px;
@@ -900,9 +899,11 @@ textarea#comment::placeholder {
     text-transform: uppercase;
     font-weight: bold;
     text-align: center;
-}
-
-.subscribe_bt a:hover {
+    border: none; /* added to remove the button border /
+    cursor: pointer; / added to show pointer cursor on hover */
+ }
+    
+.subscribe_bt button[type="submit"]:hover {
     color: #ffffff;
     background-color: #3674f2;
 }

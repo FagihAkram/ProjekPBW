@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +32,7 @@ Route::get('/about', function () {
 Route::get('/login', function () {
     return view('login');
 });
+
+
+Route::get('/comments/create', [CommentController::class, 'create']);
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
