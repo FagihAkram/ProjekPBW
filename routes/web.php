@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CommentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,5 +44,8 @@ Route::middleware('auth')->group(function () {
         return view('news');
     })->name('news');
 });
+
+
+Route::post('/comments', [CommentController::class, 'store'])->name('comments.store');
 
 require __DIR__.'/auth.php';
