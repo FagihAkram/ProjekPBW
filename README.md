@@ -2,7 +2,6 @@
 Aplikasi Health Virus adalah sebuah platform digital yang dirancang untuk memberikan informasi seputar kesehatan kepada pengguna. Dalam era di mana pandemi virus sangat mempengaruhi kehidupan sehari-hari, aplikasi ini bertujuan untuk memberikan akses mudah dan cepat kepada pengguna tentang berbagai aspek kesehatan yang relevan, termasuk langkah-langkah pencegahan, gejala, pengobatan, dan sumber daya yang tersedia.
 
 Dengan fokus pada virus dan penyakit menular, aplikasi ini memberikan latar belakang yang komprehensif tentang berbagai jenis virus yang ada, termasuk informasi tentang penyebaran, gejala, diagnosis, dan pengobatannya. Tujuannya adalah untuk meningkatkan pemahaman pengguna tentang virus-virus yang mungkin mereka hadapi dan membantu mereka mengambil langkah-langkah yang tepat untuk menjaga kesehatan diri sendiri dan orang-orang di sekitar mereka.
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 ## Contributing
 
@@ -14,4 +13,4 @@ Fagih Akram (2108107010061)
 - install composer using `composer install`
 - generate new key using `php artisan key:generate`
 - migrating table using `php artisan migrate`
-- install npm using 'npm install'
+- install npm using `npm install`

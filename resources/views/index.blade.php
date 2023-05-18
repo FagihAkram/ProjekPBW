@@ -185,10 +185,7 @@
             </div>
             <div class="col-md-6">
                <h1 class="about_taital">Virus, what it is?</span></h1>
-               <p class="about_text">Demam dapat disebabkan oleh berbagai jenis kuman, termasuk virus, bakteri, jamur,
-                  parasit, atau reaksi inflamasi. Ini adalah gejala dari suatu kondisi atau infeksi, bukan suatu
-                  penyakit. Oleh karena itu, penting untuk mengidentifikasi penyebabnya dan mencari perawatan medis yang
-                  tepat jika mengalami demam.</p>
+               <p class="about_text">Virus adalah organisme mikroskopis yang terdiri dari materi genetik seperti DNA atau RNA yang terbungkus dalam lapisan protein yang disebut kapsid.</p>
                <div class="read_bt"><a href="about">Read More</a></div>
             </div>
          </div>
@@ -207,13 +204,7 @@
                   <div class="taital_right">
                      <h1 class="doctor_taital">What doctors say..</h1>
                      <p class="doctor_text">Virus merupakan mikroorganisme yang dapat menyebabkan berbagai jenis
-                        penyakit, dari ringan hingga serius. Beberapa virus dapat menyebar dengan mudah dari orang ke
-                        orang melalui tetesan udara atau melalui kontak langsung dengan orang yang terinfeksi. Oleh
-                        karena itu, penting untuk mengambil tindakan pencegahan yang tepat, seperti mencuci tangan
-                        secara teratur, menjaga jarak sosial, dan menghindari kerumunan, untuk membantu mengurangi
-                        risiko terpapar dan menyebarluaskan virus. Jika seseorang terinfeksi virus, maka sangat penting
-                        untuk mencari perawatan medis yang tepat untuk membantu mengurangi gejala dan mempercepat
-                        pemulihan.</p>
+                        penyakit, dari ringan hingga serius.</p>
                      <div class="readmore_bt"><a href="doctors">Read More</a></div>
                   </div>
                </div>
@@ -300,7 +291,7 @@
       <script>
          setTimeout(function() {
                location.reload();
-         }, 1000); // Refresh halaman setelah 5 detik (5000 ms)
+         },); // Refresh halaman 
       </script>
       @endif
 
@@ -322,18 +313,6 @@
       <!-- Tampilkan pesan atau tindakan lain untuk pengguna yang belum login -->
       <p style="text-align: center;">Silakan login terlebih dahulu untuk mengirim komentar.</p>
       @endguest
-
-      <style>
-         .alert-n {
-               padding: 20px;
-               background-color: #ff5959;
-               color: white;
-               font-size: 20px;
-               text-align: center;
-               border-radius: 10px;
-               font-weight: bold;
-         }
-      </style>
    </div>
 
    <!-- update section end -->

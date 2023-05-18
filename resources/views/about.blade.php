@@ -96,10 +96,9 @@
             </div>
             <div class="col-md-6">
                <h1 class="about_taital">Virus what it is?</span></h1>
-               <p class="about_text">Demam dapat disebabkan oleh berbagai jenis kuman, termasuk virus, bakteri, jamur,
-                  parasit, atau reaksi inflamasi. Ini adalah gejala dari suatu kondisi atau infeksi, bukan suatu
-                  penyakit. Oleh karena itu, penting untuk mengidentifikasi penyebabnya dan mencari perawatan medis yang
-                  tepat jika mengalami demam.</p>
+               <p class="about_text">Virus adalah organisme mikroskopis yang terdiri dari materi genetik seperti DNA atau RNA yang terbungkus dalam lapisan protein yang disebut kapsid. Virus tidak dapat hidup secara mandiri dan membutuhkan sel inang untuk mereplikasi dan berkembang biak. Mereka dapat menginfeksi berbagai jenis organisme, termasuk manusia, hewan, tumbuhan, dan bahkan mikroorganisme lainnya.
+                  Virus biasanya menginfeksi sel inang dengan menggabungkan diri dengan reseptor khusus pada permukaan sel tersebut. Setelah masuk ke dalam sel, virus menggunakan komponen sel inang untuk menghasilkan salinan dirinya sendiri. Proses ini sering kali merusak sel inang dan mengakibatkan gejala penyakit pada organisme yang terinfeksi.
+                  Virus dapat menyebabkan berbagai macam penyakit, mulai dari penyakit pernapasan seperti flu dan pilek hingga penyakit yang lebih serius seperti hepatitis, HIV/AIDS, dan COVID-19. Beberapa virus dapat ditangani dengan vaksinasi atau obat antivirus yang telah dikembangkan, namun ada juga virus yang belum memiliki pengobatan yang efektif.</p>
             </div>
          </div>
       </div>
