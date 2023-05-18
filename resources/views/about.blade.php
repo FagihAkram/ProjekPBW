@@ -45,6 +45,16 @@
                      <div class="menu_main">
                         <ul>
                            <li><a href="login">Login</a></li>
+                           @guest
+                           <li><a href="{{ route('login') }}">Login</a></li>
+                           @endguest
+                           @auth
+                           <form method="POST" action="{{ route('logout') }}">
+                              @csrf
+                              <button type="submit" class="btn btn-link">Logout</button>
+                           </form>
+                           @endauth
+                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                         </ul>
                      </div>
                   </div>
@@ -52,10 +62,10 @@
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <div class="overlay-content">
                         <a href="/">Home</a>
-                        <a href="protect">Protect</a>
-                        <a href="about">About</a>
-                        <a href="doctors">Doctors</a>
-                        <a href="news">News</a>
+                        <a href="{{ route('protect') }}">Protect</a>
+                        <a href="{{ route('about') }}">About</a>
+                        <a href="{{ route('doctors') }}">Doctors</a>
+                        <a href="{{ route('news') }}">News</a>
                      </div>
                   </div>
                   <span class="navbar-toggler-icon"></span>

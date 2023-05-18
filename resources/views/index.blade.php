@@ -42,7 +42,8 @@
                   <div class="togle_">
                      <div class="menu_main">
                         <ul>
-                           <li><a href="login">Login</a></li>
+                           <li><a href="#">Login</a></li>
+                           <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                         </ul>
                      </div>
                   </div>
@@ -50,10 +51,10 @@
                      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
                      <div class="overlay-content">
                         <a href="/">Home</a>
-                        <a href="protect">Protect</a>
-                        <a href="about">About</a>
-                        <a href="doctors">Doctors</a>
-                        <a href="news">News</a>
+                        <a href="{{ route('protect') }}">Protect</a>
+                        <a href="{{ route('about') }}">About</a>
+                        <a href="{{ route('doctors') }}">Doctors</a>
+                        <a href="{{ route('news') }}">News</a>
                      </div>
                   </div>
                   <span class="navbar-toggler-icon"></span>
